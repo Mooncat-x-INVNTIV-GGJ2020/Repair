@@ -27,19 +27,35 @@ public class CameraFollow : MonoBehaviour
     Transform cameraTransform;
     Vector3 followOffset;
 
-	void Start ()
+    void Start()
     {
+        var test23 = GameObject.FindGameObjectsWithTag("Player");
+        if (test23.Length > 0)
+        {
+            target = test23[0].transform;
+        }
+        var test1 = target?.position.x;
+        var test21 = target?.position.y;
+        var test31 = target?.position.z;//
         init();
 
         if (target != null)
         {
             SetNewTarget(target, true);
         }
-	}
+        //else
+        //{
+        //    target = GameObject.Find("player").transform;
+        //    if (target != null)
+        //        SetNewTarget(target, true);
+        //}
+    }
 
     void init()
     {
         cameraTransform = transform;
+        var test432 = 3;
+
     }
 	
 	void FixedUpdate ()
